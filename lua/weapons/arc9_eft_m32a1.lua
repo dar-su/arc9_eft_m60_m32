@@ -319,9 +319,7 @@ end
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
-    -- if SERVER then print("swep.roundcount", swep.roundcount, "GetNWInt", swep:GetNWInt("EFTRevolverRoundCount","FUCK"), "Actual", swep:Clip1()) end
     local clip = swep:Clip1()
-    -- local sa = swep:GetValue("EFTSingleAction")
     
     local cylrot = swep:GetNWInt("EFTRevolverCylRot", 0)
     
@@ -354,12 +352,6 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     elseif anim == "ready" or anim == "draw" then   
         anim = "draw"
         timer.Simple(0.1, function() if IsValid(swep) then swep:SetLoadedRounds(swep:Clip1()) end end) -- wah wah
-        -- swep:SetNWBool("EFTRevolverRound1Loaded", clip > 5)
-        -- swep:SetNWBool("EFTRevolverRound2Loaded", clip > 4)
-        -- swep:SetNWBool("EFTRevolverRound3Loaded", clip > 3)
-        -- swep:SetNWBool("EFTRevolverRound4Loaded", clip > 2)
-        -- swep:SetNWBool("EFTRevolverRound5Loaded", clip > 1)
-        -- swep:SetNWBool("EFTRevolverRound6Loaded", clip > 0)
     elseif anim == "fire" then
         anim = "fire"
         spindelay(swep)
@@ -389,7 +381,6 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         end
 
         swep.afterreloadstart = true
-        -- swep.nextinsert = 0
     elseif anim == "reload_insert" then
         if swep.afterreloadstart then
             swep.roundcount = clip
@@ -397,25 +388,15 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
             swep.afterreloadstart = nil
         end
 
-        -- anim = swep.fistful and "fistful_insert".. (clip+1) or "sg_reload_insert" .. clip
-        -- anim = "sg_reload_insert" .. clip + 1
-        -- swep.nextinsert = (swep.nextinsert or 0) + 1
         anim = "sg_reload_insert" .. clip
         
         swep:SetNWInt("EFTRevolverCylRot", 0)
         swep.nocylrot = true
 
-        -- if !swep.fistful then
-            swep.roundcount = clip + 1
-            swep:SetNWInt("EFTRevolverRoundCount", clip + 1)
-            swep:SetLoadedRounds(6)
-        -- else
-        --     swep:SetLoadedRounds(6)
-        -- end
+        swep.roundcount = clip + 1
+        swep:SetNWInt("EFTRevolverRoundCount", clip + 1)
+        swep:SetLoadedRounds(6)
     elseif anim == "reload_finish" then
-            
-        -- swep.nextinsert = 0
-        -- anim = swep.fistful and "fistful_end_r" .. clip or "sg_reload_end"
         anim = clip == 6 and "sg_reload_end_last" or "sg_reload_end"
         swep:SetNWInt("EFTRevolverCylRot", 0)
         swep.nocylrot = true
@@ -424,12 +405,8 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     end
     
     if !swep.nocylrot then
-        -- print(anim .. "__" .. swep:GetNWInt("EFTRevolverCylRot", 0))
-        -- print("want: "..anim .. "__" .. swep:GetNWInt("EFTRevolverCylRot", 0))
         return anim .. "__" .. swep:GetNWInt("EFTRevolverCylRot", 0)
     else
-        -- print(anim)
-        -- print("want: "..anim)
         return anim
     end
 end
@@ -1120,10 +1097,9 @@ SWEP.Attachments = {
     {
         PrintName = "Foregrip",
         Category = {"eft_foregrip_small", "eft_foregrip_medium"},
-        Bone = "mod_foregrip",
-        -- Installed = "eft_ash12_hg_std",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, -90, 180),
+        Bone = "weapon_mag_axis",    
+        Pos = Vector(0, 11.3, -3.2),
+        Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
     },   
     {
