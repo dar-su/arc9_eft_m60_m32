@@ -30,25 +30,23 @@ SWEP.WorldModel = "models/weapons/w_shot_xm1014.mdl" -- set to something more va
 SWEP.ViewModel = "models/weapons/arc9/darsu_eft/c_m32a1.mdl"
 SWEP.ViewModelFOVBase = 62
 SWEP.MirrorVMWM = true
-SWEP.DefaultBodygroups = "000"
+SWEP.DefaultBodygroups = "00000000000"
 
-SWEP.BarrelLength = 36
+SWEP.BarrelLength = 54
 ------------------------- [[[           STATS            ]]] -------------------------
--- default ps12
-SWEP.DamageMax = 115/2
-SWEP.DamageMin = 99/2
-SWEP.PhysBulletMuzzleVelocity = 285 /0.0254
+
+-------------------------- DAMAGE PROFILE
+-- default bt gzh
+SWEP.DamageMax = 78/1.5
+SWEP.DamageMin = 51.5/1.5
+SWEP.PhysBulletMuzzleVelocity = 875 /0.0254
 SWEP.RangeMin = 10
 SWEP.RangeMax = 1000 /0.0254
 
-SWEP.Penetration =      28 *2.54/100/0.0254
-SWEP.PenetrationDelta = 60/100
-SWEP.ArmorPiercing =    60/100
-SWEP.RicochetChance =   30/100
-SWEP.DamageLookupTable = {
-    {   10/0.0254, 
-    115/2     },
-}
+SWEP.Penetration =      1 *2.54/100/0.0254
+SWEP.PenetrationDelta = 1/100
+SWEP.ArmorPiercing =    1/100
+SWEP.RicochetChance =   1/100
 
 
 --          Spread
@@ -72,15 +70,15 @@ SWEP.RecoilAutoControl = 3.0 -- autocompenstaion, could be cool if set to high b
 -- visual recoil   aka visrec
 SWEP.VisualRecoil = 3 -- general multiplier for it
 
-SWEP.VisualRecoilUp                   = 3   --   when fullautoing
+SWEP.VisualRecoilUp                   = 2   --   when fullautoing
 SWEP.VisualRecoilSide                 = 0.04   --   when fullautoing
 SWEP.VisualRecoilRoll = 5 -- roll tilt, a visual thing
 
 SWEP.VisualRecoilPunch = 1 -- How far back visrec moves the gun
 SWEP.VisualRecoilPunchSights = 15 -- same but in sights only
 
-SWEP.VisualRecoilDampingConst = 100  -- spring settings, this is speed of visrec
-SWEP.VisualRecoilSpringPunchDamping = 5 -- the less this is the more wobbly gun moves
+SWEP.VisualRecoilDampingConst = 27  -- spring settings, this is speed of visrec
+SWEP.VisualRecoilSpringPunchDamping = 1.5 -- the less this is the more wobbly gun moves
 SWEP.VisualRecoilSpringMagnitude = 0.5 -- some third element of spring, high values make gun shake asf on low fps
 
 SWEP.VisualRecoilPositionBumpUpHipFire = 0.1 -- gun will go down each shot by this value
@@ -122,7 +120,8 @@ SWEP.Overheat = false
 
 SWEP.RPM = 134
 SWEP.Firemodes = {
-    { Mode = 1, PrintName = "Double action", PoseParam = 1  },
+    { Mode = 1 },
+    -- { Mode = 1, PrintName = "Double action", PoseParam = 1  },
     -- { Mode = 1, PrintName = "Single action", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, Spread = 0.005, RecoilKickMult = 0.75 },
 }
 
@@ -187,37 +186,35 @@ SWEP.IronSights = {
     },
     Magnification = 1.1,
 }
-SWEP.ActivePos = Vector(-0.7, -3.1, -.35)
+SWEP.ActivePos = Vector(-0.5, -2.1, -.45)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.SprintAng = Angle(0, 20.6,  -15.2)
-SWEP.SprintPos = Vector(0.5, -5.1, -13.5)
+SWEP.SprintAng = Angle(50, 10, -45)
+SWEP.SprintPos = Vector(4, -5, 0)
 
 SWEP.NearWallAng = Angle(0, 55, 0)
 SWEP.NearWallPos = Vector(0, 0, -15)
-
-SWEP.CrouchPos = Vector(-0.7, -3.8, .35)
+SWEP.CrouchPos = Vector(-0.5, -2.0, -.45)
 SWEP.CrouchAng = Angle(0, 0, -1)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(24, 22, 3)
+SWEP.CustomizePos = Vector(16.5, 23, 4)
 SWEP.CustomizeSnapshotFOV = 95
-SWEP.CustomizeRotateAnchor = Vector(24, -4.28-0.1, -5.23)
 
 
 --          Third person stuff
 
-SWEP.HoldType = "revolver"
+SWEP.HoldType = "rpg"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "revolver"
+SWEP.HoldTypeSights = "rpg"
+
 SWEP.HoldTypeCustomize = "physgun"
 
 SWEP.WorldModelOffset = {
-    Pos = Vector(-15.5, 5.5, -3.2),
+    Pos = Vector(-10, 5.5, -6),
     Ang = Angle(-7, 0, 180),
-    -- TPIKPos = Vector(-5, 5, -4), -- rpg
-    TPIKPos = Vector(-18, 3, -4), -- rewolv
+    TPIKPos = Vector(-8, 6, -1), -- rpg
     TPIKAng = Angle(-5, 0, 180),
     Scale = 1
 }
@@ -234,7 +231,7 @@ SWEP.CamOffsetAng = Angle(0, 0, 90)
 SWEP.CamQCA_Mult = 1
 SWEP.CamQCA_Mult_ADS = 0.1
 
-SWEP.MuzzleParticle = "muzzleflash_pistol_deagle"
+SWEP.MuzzleParticle = "muzzleflash_ak47" -- Used for some muzzle effects.
 SWEP.AfterShotParticle = "barrel_smoke"
 
 SWEP.CaseEffectQCA = 2
@@ -307,7 +304,7 @@ local delayedspin
 local function spindelay(swep) -- setting nwint not in start of anim but while one before already started
     if delayedspin then return end
     delayedspin = true
-    if true then return end
+    -- if true then return end
     timer.Simple(0.1, function() -- wah wah
         if IsValid(swep) then
             local getcr = swep:GetNWInt("EFTRevolverCylRot", 0) + 1
@@ -322,7 +319,7 @@ end
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
-    if SERVER then print("swep.roundcount", swep.roundcount, "GetNWInt", swep:GetNWInt("EFTRevolverRoundCount","FUCK"), "Actual", swep:Clip1()) end
+    -- if SERVER then print("swep.roundcount", swep.roundcount, "GetNWInt", swep:GetNWInt("EFTRevolverRoundCount","FUCK"), "Actual", swep:Clip1()) end
     local clip = swep:Clip1()
     -- local sa = swep:GetValue("EFTSingleAction")
     
@@ -367,40 +364,25 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         anim = "fire"
         spindelay(swep)
     elseif anim == "dryfire" then
-        anim = "fire_dry"
+        anim = "fire"
         spindelay(swep)
     elseif anim == "reload_start" then  
         swep.roundcount = swep.roundcount or 6
         if clip == 0 or swep:GetValue("EFTForceFastReload") then 
-            anim = "sg_reload_start_empty"
+            anim = "sg_reload_start_empty" .. swep.roundcount
 
             swep:SetClip1(0) -- animation.DumpAmmo unloads LoadedRounds too
-            -- swep:SetNWBool("EFTRevolverRound1Loaded", false)
-            -- swep:SetNWBool("EFTRevolverRound2Loaded", false)
-            -- swep:SetNWBool("EFTRevolverRound3Loaded", false)
-            -- swep:SetNWBool("EFTRevolverRound4Loaded", false)
-            -- swep:SetNWBool("EFTRevolverRound5Loaded", false)
-            -- swep:SetNWBool("EFTRevolverRound6Loaded", false)
-        else            
-            -- local cunt = (6 - (swep.roundcount - clip)) -- crazy fuck
-            -- if clip > 0 and swep.roundcount > 0 and swep.roundcount < 6 and clip != swep.roundcount then -- crazy fuck
-            --     cunt = (5-clip) .. "_offset" .. (6 - swep.roundcount) -- crazy fuck
-            -- end
 
-            -- local cunt = clip
-            -- if clip == 5 then cunt = 5 end
-            -- if clip == 4 then cunt = 4 end
-            -- if clip == 3 then cunt = 3 end
-            -- if clip == 2 then cunt = 2 end
-            -- if clip == 1 then cunt = 1 end
-            -- local cunt =  6 - (swep.roundcount - clip) 
-            -- if clip != swep.roundcount then cunt = clip + clip  - (swep.roundcount - 1) end
-            -- anim = "sg_reload_start" .. cunt
-            -- anim = "sg_reload_start" .. clip
-
+            timer.Simple(2.5, function() -- wah wah
+                if IsValid(swep) then
+                    swep.roundcount = 0
+                    swep:SetNWInt("EFTRevolverRoundCount", 0)
+                end
+            end)
+        else
             local cunt = (6 - (swep.roundcount - clip)) -- crazy fuck
-            if clip > 0 and swep.roundcount > 0 and swep.roundcount < 5 and clip != swep.roundcount then -- crazy fuck
-                cunt = (6-clip) .. "_offset" .. (6 - swep.roundcount) -- crazy fuck
+            if clip > 0 and swep.roundcount > 0 and swep.roundcount < 6 and clip != swep.roundcount then -- crazy fuck
+                cunt = (6 - clip) .. "_offset" .. (6 - swep.roundcount) -- crazy fuck
             end
 
             anim = "sg_reload_start" .. cunt
@@ -443,11 +425,11 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     
     if !swep.nocylrot then
         -- print(anim .. "__" .. swep:GetNWInt("EFTRevolverCylRot", 0))
-        print("want: "..anim .. "__" .. swep:GetNWInt("EFTRevolverCylRot", 0))
+        -- print("want: "..anim .. "__" .. swep:GetNWInt("EFTRevolverCylRot", 0))
         return anim .. "__" .. swep:GetNWInt("EFTRevolverCylRot", 0)
     else
         -- print(anim)
-        print("want: "..anim)
+        -- print("want: "..anim)
         return anim
     end
 end
@@ -458,407 +440,593 @@ local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.ogg","arc9_eft_shared/ge
 local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.ogg","arc9_eft_shared/generic_mag_pouch_out2.ogg","arc9_eft_shared/generic_mag_pouch_out3.ogg","arc9_eft_shared/generic_mag_pouch_out4.ogg","arc9_eft_shared/generic_mag_pouch_out5.ogg","arc9_eft_shared/generic_mag_pouch_out6.ogg","arc9_eft_shared/generic_mag_pouch_out7.ogg"}
 local switchi = { { s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 } }
 
+local shellinsert = { path .. "mgl_grenade_insert1.ogg", path .. "mgl_grenade_insert2.ogg", path .. "mgl_grenade_insert3.ogg" }
+local shellremove = { path .. "mgl_grenade_shell_remove1.ogg", path .. "mgl_grenade_shell_remove2.ogg", path .. "mgl_grenade_shell_remove3.ogg" }
+
 local magcheck = {
     { s = randspin, t = 0 },
-    { s = path .. "rhino_drum_releasebutton.ogg", t = 0.05 },
-    { s = path .. "rsh_12_reload_start.ogg", t = 4/24 },
-    { s = randspin, t = 35/24 },
-    { s = path .. "rsh_12_reload_end.ogg", t = 49/24 },
-    { s = randspin, t = 63/24 },
+    { s = path .. "mgl_drum_button.ogg", t = 30/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 67/60 - 0.1 },
+    { s = randspin, t = 75/60 },
+    { s = randspin, t = 136/60 },
+    { s = path .. "mgl_drum_close.ogg", t = 152/60 },
+    { s = randspin, t = 184/60 },
 }
 local look = {
     { s = randspin, t = 0.05 },
-    { s = randspin, t = 23/24 },
-    { s = randspin, t = 37/24 },
-    { s = randspin, t = 58/24 },
-    { s = randspin, t = 67/24 },
-}
-local cock = {
-    { s = randspin, t = 0 },
-    { s = path .. "rsh_12_cock.ogg", t = 5/24 },
+    { s = randspin, t = 77/60 },
+    { s = randspin, t = 148/60 },
 }
 
+local sg_start0 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 63/60 - 0.1 },
+    { s = randspin, t = 97/60 },
+    { s = shellremove, t = 145/60 },  
+    { s = shellremove, t = 198/60 },  
+    { s = shellremove, t = 251/60 },  
+    { s = shellremove, t = 303/60 },  
+    { s = shellremove, t = 348/60 },  
+    { s = randspin, t = 373/60 },
+
+    {shelleject = true, att = 2, t = 145/60 + 0.25 },  
+    {shelleject = true, att = 2, t = 198/60 + 0.25 },  
+    {shelleject = true, att = 2, t = 251/60 + 0.25 },  
+    {shelleject = true, att = 2, t = 303/60 + 0.25 },  
+    {shelleject = true, att = 2, t = 348/60 + 0.25 },  
+}
 local sg_start1 = {
     { s = randspin, t = 0 },  
-    { s = path .. "rhino_drum_releasebutton.ogg", t = 2/26 },
-    { s = path .. "rsh_12_reload_start.ogg", t = 4/26 },
-    { s = randspin, t = 21/26 },  
-    { s = path .. "rsh_12_shell_out.ogg", t = 43/26 },
-    { s = path .. "rsh_12_shell_out.ogg", t = 69/26 },
-    { s = path .. "rsh_12_shell_out.ogg", t = 93/26 },
-    { s = path .. "rsh_12_shell_out.ogg", t = 117/26 },
-    {shelleject = true, att = 2, t = 50/26},
-    {shelleject = true, att = 2, t = 75/26},
-    {shelleject = true, att = 2, t = 98/26},
-    {shelleject = true, att = 2, t = 129/26},
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 63/60 - 0.1 },
+
+    { s = randspin, t = 97/60 },
+    { s = path .. "mgl_drum_rotate3.ogg", t = 138/60 },
+
+    { s = shellremove, t = 145/60 + 0.7333 },  
+    { s = shellremove, t = 198/60 + 0.7333 },  
+    { s = shellremove, t = 251/60 + 0.7333 },  
+    { s = shellremove, t = 303/60 + 0.7333 },  
+    { s = shellremove, t = 348/60 + 0.7333 },  
+    { s = randspin, t = 373/60 + 0.7333 },
+
+    {shelleject = true, att = 2, t = 145/60 + 0.25 + 0.7333 },  
+    {shelleject = true, att = 2, t = 198/60 + 0.25 + 0.7333 },  
+    {shelleject = true, att = 2, t = 251/60 + 0.25 + 0.7333 },  
+    {shelleject = true, att = 2, t = 303/60 + 0.25 + 0.7333 },  
+    {shelleject = true, att = 2, t = 348/60 + 0.25 + 0.7333 },  
 }
+local sg_start2 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 63/60 - 0.1 },
+
+    { s = randspin, t = 97/60 },
+    { s = path .. "mgl_drum_rotate2.ogg", t = 139/60 },
+
+    { s = shellremove, t = 145/60 + 0.8167 },  
+    { s = shellremove, t = 198/60 + 0.8167 },  
+    { s = shellremove, t = 251/60 + 0.8167 },  
+    { s = shellremove, t = 303/60 + 0.8167 },  
+    { s = shellremove, t = 348/60 + 0.8167 },  
+    { s = randspin, t = 373/60 + 0.8167 },
+
+    {shelleject = true, att = 2, t = 145/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 198/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 251/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 303/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 348/60 + 0.25 + 0.8167 },  
+}
+local sg_start3 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 63/60 - 0.1 },
+
+    { s = randspin, t = 97/60 },
+    { s = path .. "mgl_drum_rotate1.ogg", t = 139/60 },
+
+    { s = shellremove, t = 145/60 + 0.8167 },  
+    { s = shellremove, t = 198/60 + 0.8167 },  
+    { s = shellremove, t = 251/60 + 0.8167 },  
+    { s = shellremove, t = 303/60 + 0.8167 },  
+    { s = shellremove, t = 348/60 + 0.8167 },  
+    { s = randspin, t = 373/60 + 0.8167 },
+
+    {shelleject = true, att = 2, t = 145/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 198/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 251/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 303/60 + 0.25 + 0.8167 },  
+    {shelleject = true, att = 2, t = 348/60 + 0.25 + 0.8167 },  
+}
+local sg_start4 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 63/60 - 0.1 },
+
+    { s = randspin, t = 97/60 },
+    { s = path .. "mgl_drum_rotate1.ogg", t = 140/60 },
+    { s = path .. "mgl_drum_rotate3.ogg", t = 177/60 },
+
+    { s = shellremove, t = 145/60 + 1.35 },  
+    { s = shellremove, t = 198/60 + 1.35 },  
+    { s = shellremove, t = 251/60 + 1.35 },  
+    { s = shellremove, t = 303/60 + 1.35 },  
+    { s = shellremove, t = 348/60 + 1.35 },  
+    { s = randspin, t = 373/60 + 1.35 },
+
+    {shelleject = true, att = 2, t = 145/60 + 0.25 + 1.35 },  
+    {shelleject = true, att = 2, t = 198/60 + 0.25 + 1.35 },  
+    {shelleject = true, att = 2, t = 251/60 + 0.25 + 1.35 },  
+    {shelleject = true, att = 2, t = 303/60 + 0.25 + 1.35 },  
+    {shelleject = true, att = 2, t = 348/60 + 0.25 + 1.35 },  
+}
+local sg_start5 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 63/60 - 0.1 },
+
+    { s = randspin, t = 97/60 },
+    { s = path .. "mgl_drum_rotate1.ogg", t = 141/60 },
+    { s = path .. "mgl_drum_rotate2.ogg", t = 179/60 },
+
+    { s = shellremove, t = 230/60  },  
+    { s = shellremove, t = 285/60   },  
+    { s = shellremove, t = 337/60  },  
+    { s = shellremove, t = 391/60  },  
+    { s = shellremove, t = 436/60  },  
+    { s = randspin, t = 373/60 + 1.4167 },
+
+    {shelleject = true, att = 2, t = 145/60 + 0.25+ 1.4167 },  
+    {shelleject = true, att = 2, t = 198/60 + 0.25+ 1.4167 },  
+    {shelleject = true, att = 2, t = 251/60 + 0.25+ 1.4167 },  
+    {shelleject = true, att = 2, t = 303/60 + 0.25+ 1.4167 },  
+    {shelleject = true, att = 2, t = 348/60 + 0.25+ 1.4167 },  
+}
+
+
+local sg_estart0_6 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 65/60 - 0.1 },
+    { s = randspin, t = 87/60 },
+
+    { s = path .. "mgl_grenade_shell_purge_all.ogg", t = 114/60 },
+    { s = randspin, t = 136/60 },
+
+    {shelleject = true, att = 4, t = 114/60 + 0.25 },  
+    {shelleject = true, att = 5, t = 114/60 + 0.3 },  
+    {shelleject = true, att = 6, t = 114/60 + 0.32 },  
+    {shelleject = true, att = 7, t = 114/60 + 0.22 },  
+    {shelleject = true, att = 8, t = 114/60 + 0.27 },  
+    {shelleject = true, att = 9, t = 114/60 + 0.28 },  
+}
+
+local sg_estart0_5 = table.Copy(sg_estart0_6) sg_estart0_5[12] = nil
+local sg_estart0_4 = table.Copy(sg_estart0_6) sg_estart0_4[12] = nil sg_estart0_4[11] = nil
+local sg_estart0_3 = table.Copy(sg_estart0_6) sg_estart0_3[12] = nil sg_estart0_3[11] = nil sg_estart0_3[10] = nil
+local sg_estart0_2 = table.Copy(sg_estart0_6) sg_estart0_2[12] = nil sg_estart0_2[11] = nil sg_estart0_2[10] = nil sg_estart0_2[9] = nil
+local sg_estart0_1 = table.Copy(sg_estart0_6) sg_estart0_1[12] = nil sg_estart0_1[11] = nil sg_estart0_1[10] = nil sg_estart0_1[9] = nil sg_estart0_1[8] = nil
+
+local sg_estart1_6 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 65/60 - 0.1 },
+    { s = randspin, t = 87/60 },
+
+    { s = path .. "mgl_grenade_shell_purge_all.ogg", t = 114/60 },
+    { s = randspin, t = 136/60 },
+
+    {shelleject = true, att = 4, t = 114/60 + 0.25 },  
+    {shelleject = true, att = 5, t = 114/60 + 0.3 },  
+    {shelleject = true, att = 6, t = 114/60 + 0.32 },  
+    {shelleject = true, att = 7, t = 114/60 + 0.22 },  
+    {shelleject = true, att = 8, t = 114/60 + 0.27 },
+    {shelleject = true, att = 9, t = 114/60 + 0.28 },  
+
+    { s = path .. "mgl_drum_rotate3.ogg", t = 193/60 },
+}
+
+local sg_estart1_5 = table.Copy(sg_estart1_6) sg_estart1_5[12] = nil
+local sg_estart1_4 = table.Copy(sg_estart1_6) sg_estart1_4[12] = nil sg_estart1_4[11] = nil
+local sg_estart1_3 = table.Copy(sg_estart1_6) sg_estart1_3[12] = nil sg_estart1_3[11] = nil sg_estart1_3[10] = nil
+local sg_estart1_2 = table.Copy(sg_estart1_6) sg_estart1_2[12] = nil sg_estart1_2[11] = nil sg_estart1_2[10] = nil sg_estart1_2[9] = nil
+local sg_estart1_1 = table.Copy(sg_estart1_6) sg_estart1_1[12] = nil sg_estart1_1[11] = nil sg_estart1_1[10] = nil sg_estart1_1[9] = nil sg_estart1_1[8] = nil 
+
+local sg_estart2_6 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 65/60 - 0.1 },
+    { s = randspin, t = 87/60 },
+
+    { s = path .. "mgl_grenade_shell_purge_all.ogg", t = 114/60 },
+    { s = randspin, t = 136/60 },
+
+    {shelleject = true, att = 4, t = 114/60 + 0.25 },  
+    {shelleject = true, att = 5, t = 114/60 + 0.3 },  
+    {shelleject = true, att = 6, t = 114/60 + 0.32 },  
+    {shelleject = true, att = 7, t = 114/60 + 0.22 },  
+    {shelleject = true, att = 8, t = 114/60 + 0.27 },
+    {shelleject = true, att = 9, t = 114/60 + 0.28 },  
+
+    { s = path .. "mgl_drum_rotate2.ogg", t = 194/60 },
+}
+local sg_estart2_5 = table.Copy(sg_estart2_6) sg_estart2_5[12] = nil
+local sg_estart2_4 = table.Copy(sg_estart2_6) sg_estart2_4[12] = nil sg_estart2_4[11] = nil
+local sg_estart2_3 = table.Copy(sg_estart2_6) sg_estart2_3[12] = nil sg_estart2_3[11] = nil sg_estart2_3[10] = nil
+local sg_estart2_2 = table.Copy(sg_estart2_6) sg_estart2_2[12] = nil sg_estart2_2[11] = nil sg_estart2_2[10] = nil sg_estart2_2[9] = nil
+local sg_estart2_1 = table.Copy(sg_estart2_6) sg_estart2_1[12] = nil sg_estart2_1[11] = nil sg_estart2_1[10] = nil sg_estart2_1[9] = nil sg_estart2_1[8] = nil 
+
+local sg_estart3_6 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 65/60 - 0.1 },
+    { s = randspin, t = 87/60 },
+
+    { s = path .. "mgl_grenade_shell_purge_all.ogg", t = 114/60 },
+    { s = randspin, t = 136/60 },
+
+    {shelleject = true, att = 4, t = 114/60 + 0.25 },  
+    {shelleject = true, att = 5, t = 114/60 + 0.3 },  
+    {shelleject = true, att = 6, t = 114/60 + 0.32 },  
+    {shelleject = true, att = 7, t = 114/60 + 0.22 },  
+    {shelleject = true, att = 8, t = 114/60 + 0.27 },
+    {shelleject = true, att = 9, t = 114/60 + 0.28 },  
+
+    { s = path .. "mgl_drum_rotate1.ogg", t = 194/60 },
+}
+local sg_estart3_5 = table.Copy(sg_estart3_6) sg_estart3_5[12] = nil
+local sg_estart3_4 = table.Copy(sg_estart3_6) sg_estart3_4[12] = nil sg_estart3_4[11] = nil
+local sg_estart3_3 = table.Copy(sg_estart3_6) sg_estart3_3[12] = nil sg_estart3_3[11] = nil sg_estart3_3[10] = nil
+local sg_estart3_2 = table.Copy(sg_estart3_6) sg_estart3_2[12] = nil sg_estart3_2[11] = nil sg_estart3_2[10] = nil sg_estart3_2[9] = nil
+local sg_estart3_1 = table.Copy(sg_estart3_6) sg_estart3_1[12] = nil sg_estart3_1[11] = nil sg_estart3_1[10] = nil sg_estart3_1[9] = nil sg_estart3_1[8] = nil 
+
+local sg_estart4_6 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 65/60 - 0.1 },
+    { s = randspin, t = 87/60 },
+
+    { s = path .. "mgl_grenade_shell_purge_all.ogg", t = 114/60 },
+    { s = randspin, t = 136/60 },
+
+    {shelleject = true, att = 4, t = 114/60 + 0.25 },  
+    {shelleject = true, att = 5, t = 114/60 + 0.3 },  
+    {shelleject = true, att = 6, t = 114/60 + 0.32 },  
+    {shelleject = true, att = 7, t = 114/60 + 0.22 },  
+    {shelleject = true, att = 8, t = 114/60 + 0.27 },
+    {shelleject = true, att = 9, t = 114/60 + 0.28 },  
+
+    { s = path .. "mgl_drum_rotate1.ogg", t = 194/60 },
+    { s = path .. "mgl_drum_rotate3.ogg", t = 233/60 },
+}
+local sg_estart4_5 = table.Copy(sg_estart4_6) sg_estart4_5[12] = nil
+local sg_estart4_4 = table.Copy(sg_estart4_6) sg_estart4_4[12] = nil sg_estart4_4[11] = nil
+local sg_estart4_3 = table.Copy(sg_estart4_6) sg_estart4_3[12] = nil sg_estart4_3[11] = nil sg_estart4_3[10] = nil
+local sg_estart4_2 = table.Copy(sg_estart4_6) sg_estart4_2[12] = nil sg_estart4_2[11] = nil sg_estart4_2[10] = nil sg_estart4_2[9] = nil
+local sg_estart4_1 = table.Copy(sg_estart4_6) sg_estart4_1[12] = nil sg_estart4_1[11] = nil sg_estart4_1[10] = nil sg_estart4_1[9] = nil sg_estart4_1[8] = nil 
+
+
+local sg_estart5_6 = {
+    { s = randspin, t = 0 },  
+    { s = path .. "mgl_drum_button.ogg", t = 28/60 },
+    { s = path .. "mgl_drum_open.ogg", t = 65/60 - 0.1 },
+    { s = randspin, t = 87/60 },
+
+    { s = path .. "mgl_grenade_shell_purge_all.ogg", t = 114/60 },
+    { s = randspin, t = 136/60 },
+
+    {shelleject = true, att = 4, t = 114/60 + 0.25 },  
+    {shelleject = true, att = 5, t = 114/60 + 0.3 },  
+    {shelleject = true, att = 6, t = 114/60 + 0.32 },  
+    {shelleject = true, att = 7, t = 114/60 + 0.22 },  
+    {shelleject = true, att = 8, t = 114/60 + 0.27 },
+    {shelleject = true, att = 9, t = 114/60 + 0.28 },   
+
+    { s = path .. "mgl_drum_rotate1.ogg", t = 192/60 },
+    { s = path .. "mgl_drum_rotate2.ogg", t = 230/60 },
+}
+local sg_estart5_5 = table.Copy(sg_estart5_6) sg_estart5_5[12] = nil
+local sg_estart5_4 = table.Copy(sg_estart5_6) sg_estart5_4[12] = nil sg_estart5_4[11] = nil
+local sg_estart5_3 = table.Copy(sg_estart5_6) sg_estart5_3[12] = nil sg_estart5_3[11] = nil sg_estart5_3[10] = nil
+local sg_estart5_2 = table.Copy(sg_estart5_6) sg_estart5_2[12] = nil sg_estart5_2[11] = nil sg_estart5_2[10] = nil sg_estart5_2[9] = nil
+local sg_estart5_1 = table.Copy(sg_estart5_6) sg_estart5_1[12] = nil sg_estart5_1[11] = nil sg_estart5_1[10] = nil sg_estart5_1[9] = nil sg_estart5_1[8] = nil 
+
+
 local sg_insert1 = {
-    { s = randspin, t = 0/28 },
-    { s = path .. "rsh_12_ammo_in.ogg", t = 14/28 },
-}
-local sg_insert2 = {
-    { s = path .. "rsh_12_ammo_in.ogg", t = 13/28 },
-}
-local sg_insert3 = {
-    { s = randspin, t = 0/28 },
-    { s = path .. "rsh_12_ammo_in.ogg", t = 13/28 },
-}
-local sg_insert4 = {
-    { s = path .. "rsh_12_ammo_in.ogg", t = 12/28 },
+    { s = pouchout, t = 0, v = 0.75 },
+    { s = shellinsert, t = 23/60 },
+    { s = randspin, t = 58/60, v = 0.5 },
 }
 local sg_end = {
-    { s = randspin, t = 6/26 },
-    { s = path .. "rsh_12_reload_end.ogg", t = 6/26 },
-    { s = randspin, t = 22/26 },
+    { s = path .. "mgl_drum_close.ogg", t = 18/60 },
+    { s = randspin, t = 46/60 },
 }
 
-local ff_start5 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-    {shelleject = true, att = 2, t = 1.7},
-    {shelleject = true, att = 2, t = 1.75},
-    {shelleject = true, att = 2, t = 1.8},
-}
-local ff_start4 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-    {shelleject = true, att = 2, t = 1.7},
-    {shelleject = true, att = 2, t = 1.75},
-}
-local ff_start3 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-    {shelleject = true, att = 2, t = 1.7},
-}
-local ff_start2 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-    {shelleject = true, att = 2, t = 1.65},
-}
-local ff_start1 = {
-    { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
-    { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
-    { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
-    {shelleject = true, att = 2, t = 1.6},
-}
-local ff_insert1 = {
-    { s = randspin, t = 0/30 },
-    { s = path .. "rsh_12_ammo_in.ogg", t = 17/30 },
-}
-local ff_insert2 = {
-    { s = path .. "rsh_12_ammo_in.ogg", t = 16/30 },
-}
-local ff_insert3 = {
-    { s = randspin, t = 0/30 },
-    { s = path .. "rsh_12_ammo_in.ogg", t = 14/30 },
-}
-local ff_insert4 = {
-    { s = path .. "rsh_12_ammo_in.ogg", t = 13/30 },
-}
-local ff_insert5 = {
-    { s = path .. "rsh_12_ammo_in.ogg", t = 5/30 },
-    { s = randspin, t = 9/30 },
-}
-local ff_end1 = {
-    { s = randspin, t = 3/26 },
-    { s = path .. "rsh_12_reload_end.ogg", t = 24/26 },
-    { s = randspin, t = 41/26 },
-}
-local ff_end5 = {
-    { s = path .. "rsh_12_reload_end.ogg", t = 6/26 },
-    { s = randspin, t = 24/26 },
-}
+local drawa = { { s = "arc9_eft_shared/weap_in.ogg", t = 0 } }
+local holstera = { { s = "arc9_eft_shared/weap_out.ogg", t = 0 } }
+local fireda = { { s = path .. "mgl_trigger_press.ogg", t = 0.0 }, { s = path .. "mgl_hammer_release.ogg", t = 0.02 }, { s = {path .. "mgl_drum_fire_rotate1.ogg", path .. "mgl_drum_fire_rotate2.ogg"}, t = 0.05 } }
+local firedry = { { s = path .. "mgl_trigger_press.ogg", t = 0.0 } }
 
-local drawa = { { s = "arc9_eft_shared/pm_draw.ogg", t = 0 } }
-local holstera = { { s = "arc9_eft_shared/pm_holster.ogg", t = 0 } }
-local fireda = { { s = path .. "rhino_hammer_release.ogg", t = 0.06 } }
-local firedry = { { s = path .. "rhino_hammer_release.ogg", t = 0.17 } }
+local alwayslhik = {
+    { t = 0, lhik = 1 },
+    { t = 1, lhik = 1 },
+} 
+local neverlhik = {
+    { t = 0, lhik = 0 },
+    { t = 1, lhik = 0 },
+} 
+local startlhik = {
+    { t = 0, lhik = 1 },
+    { t = 0.001, lhik = 0 },
+    { t = 0.8, lhik = 1 },
+    { t = 1, lhik = 1 },
+} 
+local endlhik = {
+    { t = 0, lhik = 1 },
+    { t = 0.5, lhik = 0 },
+    { t = 1, lhik = 0 },
+} 
+local rstartlhik = {
+    { t = 0, lhik = 1 },
+    { t = 0.2, lhik = 0 },
+    { t = 1, lhik = 0 },
+} 
+local rendlhik = {
+    { t = 0, lhik = 0 },
+    { t = 0.1, lhik = 0 },
+    { t = 0.8, lhik = 1 },
+    { t = 1, lhik = 1 },
+} 
+local looklhik = {
+    { t = 0, lhik = 1 },
+    { t = 0.4, lhik = 1 },
+    { t = 0.57, lhik = 0 },
+    { t = 0.75, lhik = 0 },
+    { t = 0.92, lhik = 1 },
+    { t = 1, lhik = 1 },
+} 
+local checklhik = {
+    { t = 0, lhik = 1 },
+    { t = 0.1, lhik = 0 },
+    { t = 0.76, lhik = 0 },
+    { t = 0.84, lhik = 1 },
+    { t = 1, lhik = 1 },
+} 
 
 SWEP.Animations = {
-    ["idle"] = { Source = "idle__0" },
-    ["idle__0"] = { Source = "idle__0" },
-    ["idle__1"] = { Source = "idle__1" },
-    ["idle__2"] = { Source = "idle__2" },
-    ["idle__3"] = { Source = "idle__3" },
-    ["idle__4"] = { Source = "idle__4" },
-    ["idle__5"] = { Source = "idle__5" },
+    ["idle"] = { Source = "idle__0", IKTimeLine = alwayslhik },
+    ["idle__0"] = { Source = "idle__0", IKTimeLine = alwayslhik },
+    ["idle__1"] = { Source = "idle__1", IKTimeLine = alwayslhik },
+    ["idle__2"] = { Source = "idle__2", IKTimeLine = alwayslhik },
+    ["idle__3"] = { Source = "idle__3", IKTimeLine = alwayslhik },
+    ["idle__4"] = { Source = "idle__4", IKTimeLine = alwayslhik },
+    ["idle__5"] = { Source = "idle__5", IKTimeLine = alwayslhik },
 
-    ["draw"] = { Source = "draw__0", EventTable = drawa },
-    ["holster"] = { Source = "holster__0", EventTable = holstera },
+    ["draw"] = { Source = "draw__0", EventTable = drawa, IKTimeLine = startlhik },
+    ["holster"] = { Source = "holster__0", EventTable = holstera, IKTimeLine = endlhik },
 
-    ["draw__0"] = { Source = "draw__0", EventTable = drawa },
-    ["draw__1"] = { Source = "draw__1", EventTable = drawa },
-    ["draw__2"] = { Source = "draw__2", EventTable = drawa },
-    ["draw__3"] = { Source = "draw__3", EventTable = drawa },
-    ["draw__4"] = { Source = "draw__4", EventTable = drawa },
-    ["draw__5"] = { Source = "draw__5", EventTable = drawa },
+    ["draw__0"] = { Source = "draw__0", EventTable = drawa, IKTimeLine = startlhik },
+    ["draw__1"] = { Source = "draw__1", EventTable = drawa, IKTimeLine = startlhik },
+    ["draw__2"] = { Source = "draw__2", EventTable = drawa, IKTimeLine = startlhik },
+    ["draw__3"] = { Source = "draw__3", EventTable = drawa, IKTimeLine = startlhik },
+    ["draw__4"] = { Source = "draw__4", EventTable = drawa, IKTimeLine = startlhik },
+    ["draw__5"] = { Source = "draw__5", EventTable = drawa, IKTimeLine = startlhik },
 
-    ["holster__0"] = { Source = "holster__0", EventTable = holstera },
-    ["holster__1"] = { Source = "holster__1", EventTable = holstera },
-    ["holster__2"] = { Source = "holster__2", EventTable = holstera },
-    ["holster__3"] = { Source = "holster__3", EventTable = holstera },
-    ["holster__4"] = { Source = "holster__4", EventTable = holstera },
-    ["holster__5"] = { Source = "holster__5", EventTable = holstera },
+    ["holster__0"] = { Source = "holster__0", EventTable = holstera, IKTimeLine = endlhik },
+    ["holster__1"] = { Source = "holster__1", EventTable = holstera, IKTimeLine = endlhik },
+    ["holster__2"] = { Source = "holster__2", EventTable = holstera, IKTimeLine = endlhik },
+    ["holster__3"] = { Source = "holster__3", EventTable = holstera, IKTimeLine = endlhik },
+    ["holster__4"] = { Source = "holster__4", EventTable = holstera, IKTimeLine = endlhik },
+    ["holster__5"] = { Source = "holster__5", EventTable = holstera, IKTimeLine = endlhik },
 
 
-    ["fire__0"] = { Source = "fire__0", EventTable = fireda },
-    ["fire__1"] = { Source = "fire__1", EventTable = fireda },
-    ["fire__2"] = { Source = "fire__2", EventTable = fireda },
-    ["fire__3"] = { Source = "fire__3", EventTable = fireda },
-    ["fire__4"] = { Source = "fire__4", EventTable = fireda },
-    ["fire__5"] = { Source = "fire__5", EventTable = fireda },
+    ["fire__0"] = { Source = "fire__0", EventTable = fireda, IKTimeLine = alwayslhik },
+    ["fire__1"] = { Source = "fire__1", EventTable = fireda, IKTimeLine = alwayslhik },
+    ["fire__2"] = { Source = "fire__2", EventTable = fireda, IKTimeLine = alwayslhik },
+    ["fire__3"] = { Source = "fire__3", EventTable = fireda, IKTimeLine = alwayslhik },
+    ["fire__4"] = { Source = "fire__4", EventTable = fireda, IKTimeLine = alwayslhik },
+    ["fire__5"] = { Source = "fire__5", EventTable = firedry, IKTimeLine = alwayslhik },
 
-    ["fire_dry__0"] = { Source = "fire__0", EventTable = firedry },
-    ["fire_dry__1"] = { Source = "fire__1", EventTable = firedry },
-    ["fire_dry__2"] = { Source = "fire__2", EventTable = firedry },
-    ["fire_dry__3"] = { Source = "fire__3", EventTable = firedry },
-    ["fire_dry__4"] = { Source = "fire__4", EventTable = firedry },
-    ["fire_dry__5"] = { Source = "fire__5", EventTable = firedry },
+    ["sg_reload_start1__0"] = { Source = "sg_reload_start1__0", EventTable = sg_start0, IKTimeLine = rstartlhik },
+    ["sg_reload_start1__1"] = { Source = "sg_reload_start1__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start1__2"] = { Source = "sg_reload_start1__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start1__3"] = { Source = "sg_reload_start1__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start1__4"] = { Source = "sg_reload_start1__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start1__5"] = { Source = "sg_reload_start1__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start1__0"] = { Source = "sg_reload_start1__0", EventTable = sg_start1 },
-    ["sg_reload_start1__1"] = { Source = "sg_reload_start1__1", EventTable = sg_start1 },
-    ["sg_reload_start1__2"] = { Source = "sg_reload_start1__2", EventTable = sg_start1 },
-    ["sg_reload_start1__3"] = { Source = "sg_reload_start1__3", EventTable = sg_start1 },
-    ["sg_reload_start1__4"] = { Source = "sg_reload_start1__4", EventTable = sg_start1 },
-    ["sg_reload_start1__5"] = { Source = "sg_reload_start1__5", EventTable = sg_start1 },
-    ["sg_reload_start2__0"] = { Source = "sg_reload_start2__0", EventTable = sg_start1 },
-    ["sg_reload_start2__1"] = { Source = "sg_reload_start2__1", EventTable = sg_start1 },
-    ["sg_reload_start2__2"] = { Source = "sg_reload_start2__2", EventTable = sg_start1 },
-    ["sg_reload_start2__3"] = { Source = "sg_reload_start2__3", EventTable = sg_start1 },
-    ["sg_reload_start2__4"] = { Source = "sg_reload_start2__4", EventTable = sg_start1 },
-    ["sg_reload_start2__5"] = { Source = "sg_reload_start2__5", EventTable = sg_start1 },
-    ["sg_reload_start3__0"] = { Source = "sg_reload_start3__0", EventTable = sg_start1 },
-    ["sg_reload_start3__1"] = { Source = "sg_reload_start3__1", EventTable = sg_start1 },
-    ["sg_reload_start3__2"] = { Source = "sg_reload_start3__2", EventTable = sg_start1 },
-    ["sg_reload_start3__3"] = { Source = "sg_reload_start3__3", EventTable = sg_start1 },
-    ["sg_reload_start3__4"] = { Source = "sg_reload_start3__4", EventTable = sg_start1 },
-    ["sg_reload_start3__5"] = { Source = "sg_reload_start3__5", EventTable = sg_start1 },
-    ["sg_reload_start4__0"] = { Source = "sg_reload_start4__0", EventTable = sg_start1 },
-    ["sg_reload_start4__1"] = { Source = "sg_reload_start4__1", EventTable = sg_start1 },
-    ["sg_reload_start4__2"] = { Source = "sg_reload_start4__2", EventTable = sg_start1 },
-    ["sg_reload_start4__3"] = { Source = "sg_reload_start4__3", EventTable = sg_start1 },
-    ["sg_reload_start4__4"] = { Source = "sg_reload_start4__4", EventTable = sg_start1 },
-    ["sg_reload_start4__5"] = { Source = "sg_reload_start4__5", EventTable = sg_start1 },
-    ["sg_reload_start5__0"] = { Source = "sg_reload_start5__0", EventTable = sg_start1 },
-    ["sg_reload_start5__1"] = { Source = "sg_reload_start5__1", EventTable = sg_start1 },
-    ["sg_reload_start5__2"] = { Source = "sg_reload_start5__2", EventTable = sg_start1 },
-    ["sg_reload_start5__3"] = { Source = "sg_reload_start5__3", EventTable = sg_start1 },
-    ["sg_reload_start5__4"] = { Source = "sg_reload_start5__4", EventTable = sg_start1 },
-    ["sg_reload_start5__5"] = { Source = "sg_reload_start5__5", EventTable = sg_start1 },
-    ["sg_reload_start6__0"] = { Source = "sg_reload_start6__0", EventTable = sg_start1 },
-    ["sg_reload_start6__1"] = { Source = "sg_reload_start6__1", EventTable = sg_start1 },
-    ["sg_reload_start6__2"] = { Source = "sg_reload_start6__2", EventTable = sg_start1 },
-    ["sg_reload_start6__3"] = { Source = "sg_reload_start6__3", EventTable = sg_start1 },
-    ["sg_reload_start6__4"] = { Source = "sg_reload_start6__4", EventTable = sg_start1 },
-    ["sg_reload_start6__5"] = { Source = "sg_reload_start6__5", EventTable = sg_start1 },
-    ["sg_reload_start4_offset1__0"] = { Source = "sg_reload_start4_offset1__0", EventTable = sg_start1 },
-    ["sg_reload_start4_offset1__1"] = { Source = "sg_reload_start4_offset1__1", EventTable = sg_start1 },
-    ["sg_reload_start4_offset1__2"] = { Source = "sg_reload_start4_offset1__2", EventTable = sg_start1 },
-    ["sg_reload_start4_offset1__3"] = { Source = "sg_reload_start4_offset1__3", EventTable = sg_start1 },
-    ["sg_reload_start4_offset1__4"] = { Source = "sg_reload_start4_offset1__4", EventTable = sg_start1 },
-    ["sg_reload_start4_offset1__5"] = { Source = "sg_reload_start4_offset1__5", EventTable = sg_start1 },
+    ["sg_reload_start2__0"] = { Source = "sg_reload_start2__0", EventTable = sg_start0, IKTimeLine = rstartlhik },
+    ["sg_reload_start2__1"] = { Source = "sg_reload_start2__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start2__2"] = { Source = "sg_reload_start2__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start2__3"] = { Source = "sg_reload_start2__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start2__4"] = { Source = "sg_reload_start2__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start2__5"] = { Source = "sg_reload_start2__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start4_offset2__1"] = { Source = "sg_reload_start4_offset2__1", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__2"] = { Source = "sg_reload_start4_offset2__2", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__3"] = { Source = "sg_reload_start4_offset2__3", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__4"] = { Source = "sg_reload_start4_offset2__4", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__5"] = { Source = "sg_reload_start4_offset2__5", EventTable = sg_start1 },
+    ["sg_reload_start3__0"] = { Source = "sg_reload_start3__0", EventTable = sg_start0, IKTimeLine = rstartlhik },
+    ["sg_reload_start3__1"] = { Source = "sg_reload_start3__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start3__2"] = { Source = "sg_reload_start3__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start3__3"] = { Source = "sg_reload_start3__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start3__4"] = { Source = "sg_reload_start3__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start3__5"] = { Source = "sg_reload_start3__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start4_offset3__0"] = { Source = "sg_reload_start4_offset3__0", EventTable = sg_start1 },
-    ["sg_reload_start4_offset3__1"] = { Source = "sg_reload_start4_offset3__1", EventTable = sg_start1 },
-    ["sg_reload_start4_offset3__2"] = { Source = "sg_reload_start4_offset3__2", EventTable = sg_start1 },
-    ["sg_reload_start4_offset3__3"] = { Source = "sg_reload_start4_offset3__3", EventTable = sg_start1 },
-    ["sg_reload_start4_offset3__4"] = { Source = "sg_reload_start4_offset3__4", EventTable = sg_start1 },
-    ["sg_reload_start4_offset3__5"] = { Source = "sg_reload_start4_offset3__5", EventTable = sg_start1 },
+    ["sg_reload_start4__0"] = { Source = "sg_reload_start4__0", EventTable = sg_start0, IKTimeLine = rstartlhik },
+    ["sg_reload_start4__1"] = { Source = "sg_reload_start4__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start4__2"] = { Source = "sg_reload_start4__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start4__3"] = { Source = "sg_reload_start4__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start4__4"] = { Source = "sg_reload_start4__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start4__5"] = { Source = "sg_reload_start4__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start4_offset4__0"] = { Source = "sg_reload_start4_offset4__0", EventTable = sg_start1 },
-    ["sg_reload_start4_offset4__1"] = { Source = "sg_reload_start4_offset4__1", EventTable = sg_start1 },
-    ["sg_reload_start4_offset4__2"] = { Source = "sg_reload_start4_offset4__2", EventTable = sg_start1 },
-    ["sg_reload_start4_offset4__3"] = { Source = "sg_reload_start4_offset4__3", EventTable = sg_start1 },
-    ["sg_reload_start4_offset4__4"] = { Source = "sg_reload_start4_offset4__4", EventTable = sg_start1 },
-    ["sg_reload_start4_offset4__5"] = { Source = "sg_reload_start4_offset4__5", EventTable = sg_start1 },
+    ["sg_reload_start5__0"] = { Source = "sg_reload_start5__0", EventTable = sg_start0, IKTimeLine = rstartlhik },
+    ["sg_reload_start5__1"] = { Source = "sg_reload_start5__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start5__2"] = { Source = "sg_reload_start5__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start5__3"] = { Source = "sg_reload_start5__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start5__4"] = { Source = "sg_reload_start5__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start5__5"] = { Source = "sg_reload_start5__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start3_offset1__0"] = { Source = "sg_reload_start3_offset1__0", EventTable = sg_start1 },
-    ["sg_reload_start3_offset1__1"] = { Source = "sg_reload_start3_offset1__1", EventTable = sg_start1 },
-    ["sg_reload_start3_offset1__2"] = { Source = "sg_reload_start3_offset1__2", EventTable = sg_start1 },
-    ["sg_reload_start3_offset1__3"] = { Source = "sg_reload_start3_offset1__3", EventTable = sg_start1 },
-    ["sg_reload_start3_offset1__4"] = { Source = "sg_reload_start3_offset1__4", EventTable = sg_start1 },
-    ["sg_reload_start3_offset1__5"] = { Source = "sg_reload_start3_offset1__5", EventTable = sg_start1 },
+    ["sg_reload_start6__0"] = { Source = "sg_reload_start6__0", EventTable = sg_start0, IKTimeLine = rstartlhik },
+    ["sg_reload_start6__1"] = { Source = "sg_reload_start6__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start6__2"] = { Source = "sg_reload_start6__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start6__3"] = { Source = "sg_reload_start6__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start6__4"] = { Source = "sg_reload_start6__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start6__5"] = { Source = "sg_reload_start6__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start3_offset2__0"] = { Source = "sg_reload_start3_offset2__0", EventTable = sg_start1 },
-    ["sg_reload_start3_offset2__1"] = { Source = "sg_reload_start3_offset2__1", EventTable = sg_start1 },
-    ["sg_reload_start3_offset2__2"] = { Source = "sg_reload_start3_offset2__2", EventTable = sg_start1 },
-    ["sg_reload_start3_offset2__3"] = { Source = "sg_reload_start3_offset2__3", EventTable = sg_start1 },
-    ["sg_reload_start3_offset2__4"] = { Source = "sg_reload_start3_offset2__4", EventTable = sg_start1 },
-    ["sg_reload_start3_offset2__5"] = { Source = "sg_reload_start3_offset2__5", EventTable = sg_start1 },
+    -- 1/6 fine
+    ["sg_reload_start5_offset1__0"] = { Source = "sg_reload_start4_offset1__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start5_offset1__1"] = { Source = "sg_reload_start4_offset1__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset1__2"] = { Source = "sg_reload_start4_offset1__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset1__3"] = { Source = "sg_reload_start4_offset1__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset1__4"] = { Source = "sg_reload_start4_offset1__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset1__5"] = { Source = "sg_reload_start4_offset1__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start2_offset1__0"] = { Source = "sg_reload_start2_offset1__0", EventTable = sg_start1 },
-    ["sg_reload_start2_offset1__1"] = { Source = "sg_reload_start2_offset1__1", EventTable = sg_start1 },
-    ["sg_reload_start2_offset1__2"] = { Source = "sg_reload_start2_offset1__2", EventTable = sg_start1 },
-    ["sg_reload_start2_offset1__3"] = { Source = "sg_reload_start2_offset1__3", EventTable = sg_start1 },
-    ["sg_reload_start2_offset1__4"] = { Source = "sg_reload_start2_offset1__4", EventTable = sg_start1 },
-    ["sg_reload_start2_offset1__5"] = { Source = "sg_reload_start2_offset1__5", EventTable = sg_start1 },
+    ["sg_reload_start5_offset2__0"] = { Source = "sg_reload_start4_offset2__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start5_offset2__1"] = { Source = "sg_reload_start4_offset2__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset2__2"] = { Source = "sg_reload_start4_offset2__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset2__3"] = { Source = "sg_reload_start4_offset2__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset2__4"] = { Source = "sg_reload_start4_offset2__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset2__5"] = { Source = "sg_reload_start4_offset2__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start2_offset2__0"] = { Source = "sg_reload_start2_offset2__0", EventTable = sg_start1 },
-    ["sg_reload_start2_offset2__1"] = { Source = "sg_reload_start2_offset2__1", EventTable = sg_start1 },
-    ["sg_reload_start2_offset2__2"] = { Source = "sg_reload_start2_offset2__2", EventTable = sg_start1 },
-    ["sg_reload_start2_offset2__3"] = { Source = "sg_reload_start2_offset2__3", EventTable = sg_start1 },
-    ["sg_reload_start2_offset2__4"] = { Source = "sg_reload_start2_offset2__4", EventTable = sg_start1 },
-    ["sg_reload_start2_offset2__5"] = { Source = "sg_reload_start2_offset2__5", EventTable = sg_start1 },
+    ["sg_reload_start5_offset3__0"] = { Source = "sg_reload_start4_offset3__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start5_offset3__1"] = { Source = "sg_reload_start4_offset3__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset3__2"] = { Source = "sg_reload_start4_offset3__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset3__3"] = { Source = "sg_reload_start4_offset3__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset3__4"] = { Source = "sg_reload_start4_offset3__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset3__5"] = { Source = "sg_reload_start4_offset3__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start3_offset3__0"] = { Source = "sg_reload_start3_offset3__0", EventTable = sg_start1 },
-    ["sg_reload_start3_offset3__1"] = { Source = "sg_reload_start3_offset3__1", EventTable = sg_start1 },
-    ["sg_reload_start3_offset3__2"] = { Source = "sg_reload_start3_offset3__2", EventTable = sg_start1 },
-    ["sg_reload_start3_offset3__3"] = { Source = "sg_reload_start3_offset3__3", EventTable = sg_start1 },
-    ["sg_reload_start3_offset3__4"] = { Source = "sg_reload_start3_offset3__4", EventTable = sg_start1 },
-    ["sg_reload_start3_offset3__5"] = { Source = "sg_reload_start3_offset3__5", EventTable = sg_start1 },
-
-    ["sg_reload_start1_offset2__0"] = { Source = "sg_reload_start1_offset2__0", EventTable = sg_start1 },
-    ["sg_reload_start1_offset2__1"] = { Source = "sg_reload_start1_offset2__1", EventTable = sg_start1 },
-    ["sg_reload_start1_offset2__2"] = { Source = "sg_reload_start1_offset2__2", EventTable = sg_start1 },
-    ["sg_reload_start1_offset2__3"] = { Source = "sg_reload_start1_offset2__3", EventTable = sg_start1 },
-    ["sg_reload_start1_offset2__4"] = { Source = "sg_reload_start1_offset2__4", EventTable = sg_start1 },
-    ["sg_reload_start1_offset2__5"] = { Source = "sg_reload_start1_offset2__5", EventTable = sg_start1 },
-
-    ["sg_reload_insert0"] = { Source = "sg_reload_insert1", EventTable = sg_insert1 },
-    ["sg_reload_insert1"] = { Source = "sg_reload_insert2", EventTable = sg_insert2 },
-    ["sg_reload_insert2"] = { Source = "sg_reload_insert3", EventTable = sg_insert3 },
-    ["sg_reload_insert3"] = { Source = "sg_reload_insert4", EventTable = sg_insert4 },
-    ["sg_reload_insert4"] = { Source = "sg_reload_insert5", EventTable = sg_insert4 },
-    ["sg_reload_insert5"] = { Source = "sg_reload_insert6", EventTable = sg_insert4 },
-
-    -- ["sg_reload_insert1"] = { Source = "sg_reload_insert6", EventTable = sg_insert1 },
-    -- ["sg_reload_insert2"] = { Source = "sg_reload_insert1", EventTable = sg_insert2 },
-    -- ["sg_reload_insert3"] = { Source = "sg_reload_insert2", EventTable = sg_insert3 },
-    -- ["sg_reload_insert4"] = { Source = "sg_reload_insert3", EventTable = sg_insert4 },
-    -- ["sg_reload_insert5"] = { Source = "sg_reload_insert4", EventTable = sg_insert4 },
-    -- ["sg_reload_insert6"] = { Source = "sg_reload_insert5", EventTable = sg_insert4 },
-
-    -- ["sg_reload_insert1"] = { Source = "sg_reload_insert6", EventTable = sg_insert1 },
-    -- ["sg_reload_insert2"] = { Source = "sg_reload_insert5", EventTable = sg_insert2 },
-    -- ["sg_reload_insert3"] = { Source = "sg_reload_insert4", EventTable = sg_insert3 },
-    -- ["sg_reload_insert4"] = { Source = "sg_reload_insert3", EventTable = sg_insert4 },
-    -- ["sg_reload_insert5"] = { Source = "sg_reload_insert2", EventTable = sg_insert4 },
-    -- ["sg_reload_insert6"] = { Source = "sg_reload_insert1", EventTable = sg_insert4 },
+    ["sg_reload_start5_offset4__0"] = { Source = "sg_reload_start4_offset4__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start5_offset4__1"] = { Source = "sg_reload_start4_offset4__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset4__2"] = { Source = "sg_reload_start4_offset4__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset4__3"] = { Source = "sg_reload_start4_offset4__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset4__4"] = { Source = "sg_reload_start4_offset4__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start5_offset4__5"] = { Source = "sg_reload_start4_offset4__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
     
-    -- ["sg_reload_insert1"] = { Source = "sg_reload_insert6", EventTable = sg_insert1 },
-    -- ["sg_reload_insert2"] = { Source = "sg_reload_insert5", EventTable = sg_insert2 },
-    -- ["sg_reload_insert3"] = { Source = "sg_reload_insert4", EventTable = sg_insert3 },
-    -- ["sg_reload_insert4"] = { Source = "sg_reload_insert3", EventTable = sg_insert4 },
-    -- ["sg_reload_insert5"] = { Source = "sg_reload_insert2", EventTable = sg_insert4 },
-    -- ["sg_reload_insert6"] = { Source = "sg_reload_insert1", EventTable = sg_insert4 },
 
-    ["sg_reload_end"] = { Source = "sg_reload_end", EventTable = sg_end },
-    ["sg_reload_end_last"] = { Source = "sg_reload_end_last", EventTable = sg_end },
+    -- 2/6 good
+    ["sg_reload_start4_offset1__0"] = { Source = "sg_reload_start3_offset1__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start4_offset1__1"] = { Source = "sg_reload_start3_offset1__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset1__2"] = { Source = "sg_reload_start3_offset1__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset1__3"] = { Source = "sg_reload_start3_offset1__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset1__4"] = { Source = "sg_reload_start3_offset1__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset1__5"] = { Source = "sg_reload_start3_offset1__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["sg_reload_start_empty__0"] = { Source = "sg_reload_start_empty__0", EventTable = ff_start1, NoMagSwap = true },
-    ["sg_reload_start_empty__1"] = { Source = "sg_reload_start_empty__1", EventTable = ff_start1, NoMagSwap = true },
-    ["sg_reload_start_empty__2"] = { Source = "sg_reload_start_empty__2", EventTable = ff_start1, NoMagSwap = true },
-    ["sg_reload_start_empty__3"] = { Source = "sg_reload_start_empty__3", EventTable = ff_start1, NoMagSwap = true },
-    ["sg_reload_start_empty__4"] = { Source = "sg_reload_start_empty__4", EventTable = ff_start1, NoMagSwap = true },
-    ["sg_reload_start_empty__5"] = { Source = "sg_reload_start_empty__5", EventTable = ff_start1, NoMagSwap = true },
+    ["sg_reload_start4_offset2__0"] = { Source = "sg_reload_start3_offset2__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start4_offset2__1"] = { Source = "sg_reload_start3_offset2__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset2__2"] = { Source = "sg_reload_start3_offset2__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset2__3"] = { Source = "sg_reload_start3_offset2__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset2__4"] = { Source = "sg_reload_start3_offset2__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset2__5"] = { Source = "sg_reload_start3_offset2__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    -- ["fistful_start1__0"] = { Source = "fistful_start__0", EventTable = ff_start1, NoMagSwap = true },
-    -- ["fistful_start1__1"] = { Source = "fistful_start__1", EventTable = ff_start1, NoMagSwap = true },
-    -- ["fistful_start1__2"] = { Source = "fistful_start__2", EventTable = ff_start1, NoMagSwap = true },
-    -- ["fistful_start1__3"] = { Source = "fistful_start__3", EventTable = ff_start1, NoMagSwap = true },
-    -- ["fistful_start1__4"] = { Source = "fistful_start__4", EventTable = ff_start1, NoMagSwap = true },
-    -- ["fistful_start2__0"] = { Source = "fistful_start__0", EventTable = ff_start2, NoMagSwap = true },
-    -- ["fistful_start2__1"] = { Source = "fistful_start__1", EventTable = ff_start2, NoMagSwap = true },
-    -- ["fistful_start2__2"] = { Source = "fistful_start__2", EventTable = ff_start2, NoMagSwap = true },
-    -- ["fistful_start2__3"] = { Source = "fistful_start__3", EventTable = ff_start2, NoMagSwap = true },
-    -- ["fistful_start2__4"] = { Source = "fistful_start__4", EventTable = ff_start2, NoMagSwap = true },
-    -- ["fistful_start3__0"] = { Source = "fistful_start__0", EventTable = ff_start3, NoMagSwap = true },
-    -- ["fistful_start3__1"] = { Source = "fistful_start__1", EventTable = ff_start3, NoMagSwap = true },
-    -- ["fistful_start3__2"] = { Source = "fistful_start__2", EventTable = ff_start3, NoMagSwap = true },
-    -- ["fistful_start3__3"] = { Source = "fistful_start__3", EventTable = ff_start3, NoMagSwap = true },
-    -- ["fistful_start3__4"] = { Source = "fistful_start__4", EventTable = ff_start3, NoMagSwap = true },
-    -- ["fistful_start4__0"] = { Source = "fistful_start__0", EventTable = ff_start4, NoMagSwap = true },
-    -- ["fistful_start4__1"] = { Source = "fistful_start__1", EventTable = ff_start4, NoMagSwap = true },
-    -- ["fistful_start4__2"] = { Source = "fistful_start__2", EventTable = ff_start4, NoMagSwap = true },
-    -- ["fistful_start4__3"] = { Source = "fistful_start__3", EventTable = ff_start4, NoMagSwap = true },
-    -- ["fistful_start4__4"] = { Source = "fistful_start__4", EventTable = ff_start4, NoMagSwap = true },
-    -- ["fistful_start5__0"] = { Source = "fistful_start__0", EventTable = ff_start5, NoMagSwap = true },
-    -- ["fistful_start5__1"] = { Source = "fistful_start__1", EventTable = ff_start5, NoMagSwap = true },
-    -- ["fistful_start5__2"] = { Source = "fistful_start__2", EventTable = ff_start5, NoMagSwap = true },
-    -- ["fistful_start5__3"] = { Source = "fistful_start__3", EventTable = ff_start5, NoMagSwap = true },
-    -- ["fistful_start5__4"] = { Source = "fistful_start__4", EventTable = ff_start5, NoMagSwap = true },
-    -- ["fistful_insert1"] = { Source = "fistful_insert1", EventTable = ff_insert1, NoMagSwap = true },
-    -- ["fistful_insert2"] = { Source = "fistful_insert2", EventTable = ff_insert2, NoMagSwap = true },
-    -- ["fistful_insert3"] = { Source = "fistful_insert3", EventTable = ff_insert3, NoMagSwap = true },
-    -- ["fistful_insert4"] = { Source = "fistful_insert4", EventTable = ff_insert4, NoMagSwap = true },
-    -- ["fistful_insert5"] = { Source = "fistful_insert5", EventTable = ff_insert5, NoMagSwap = true },
-    -- ["fistful_end_r1"] = { Source = "fistful_end_r1", EventTable = ff_end1 },
-    -- ["fistful_end_r2"] = { Source = "fistful_end_r2", EventTable = ff_end1 },
-    -- ["fistful_end_r3"] = { Source = "fistful_end_r3", EventTable = ff_end1 },
-    -- ["fistful_end_r4"] = { Source = "fistful_end_r4", EventTable = ff_end1 },
-    -- ["fistful_end_r5"] = { Source = "fistful_end_r5", EventTable = ff_end5 },
-
-    -- ["dryfire"] = { Source = "fire_dry" },
+    ["sg_reload_start4_offset3__0"] = { Source = "sg_reload_start3_offset3__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start4_offset3__1"] = { Source = "sg_reload_start3_offset3__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset3__2"] = { Source = "sg_reload_start3_offset3__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset3__3"] = { Source = "sg_reload_start3_offset3__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset3__4"] = { Source = "sg_reload_start3_offset3__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start4_offset3__5"] = { Source = "sg_reload_start3_offset3__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
 
-    ["look__0"] = { Source = "look__0", MinProgress = 0.95, FireASAP = true, EventTable = look },
-    ["look__1"] = { Source = "look__1", MinProgress = 0.95, FireASAP = true, EventTable = look },
-    ["look__2"] = { Source = "look__2", MinProgress = 0.95, FireASAP = true, EventTable = look },
-    ["look__3"] = { Source = "look__3", MinProgress = 0.95, FireASAP = true, EventTable = look },
-    ["look__4"] = { Source = "look__4", MinProgress = 0.95, FireASAP = true, EventTable = look },
-    ["look__5"] = { Source = "look__5", MinProgress = 0.95, FireASAP = true, EventTable = look },
+    -- 3/6 hoo
+    ["sg_reload_start3_offset1__0"] = { Source = "sg_reload_start2_offset1__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start3_offset1__1"] = { Source = "sg_reload_start2_offset1__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset1__2"] = { Source = "sg_reload_start2_offset1__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset1__3"] = { Source = "sg_reload_start2_offset1__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset1__4"] = { Source = "sg_reload_start2_offset1__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset1__5"] = { Source = "sg_reload_start2_offset1__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["mag_check__0"] = { Source = "mag_check__0", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["mag_check__1"] = { Source = "mag_check__1", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["mag_check__2"] = { Source = "mag_check__2", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["mag_check__3"] = { Source = "mag_check__3", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["mag_check__4"] = { Source = "mag_check__4", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
-    ["mag_check__5"] = { Source = "mag_check__5", MinProgress = 0.95, FireASAP = true, EventTable = magcheck },
+    ["sg_reload_start3_offset2__0"] = { Source = "sg_reload_start2_offset2__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start3_offset2__1"] = { Source = "sg_reload_start2_offset2__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset2__2"] = { Source = "sg_reload_start2_offset2__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset2__3"] = { Source = "sg_reload_start2_offset2__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset2__4"] = { Source = "sg_reload_start2_offset2__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start3_offset2__5"] = { Source = "sg_reload_start2_offset2__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
 
-    ["toggle__0"] = {        Source = "mod_switch__0", EventTable = switchi },
-    ["switchsights__0"] = {  Source = "mod_switch__0", EventTable = switchi },
-    ["toggle__1"] = {        Source = "mod_switch__1", EventTable = switchi },
-    ["switchsights__1"] = {  Source = "mod_switch__1", EventTable = switchi },
-    ["toggle__2"] = {        Source = "mod_switch__2", EventTable = switchi },
-    ["switchsights__2"] = {  Source = "mod_switch__2", EventTable = switchi },
-    ["toggle__3"] = {        Source = "mod_switch__3", EventTable = switchi },
-    ["switchsights__3"] = {  Source = "mod_switch__3", EventTable = switchi },
-    ["toggle__4"] = {        Source = "mod_switch__4", EventTable = switchi },
-    ["switchsights__4"] = {  Source = "mod_switch__4", EventTable = switchi },
-    ["toggle__5"] = {        Source = "mod_switch__5", EventTable = switchi },
-    ["switchsights__5"] = {  Source = "mod_switch__5", EventTable = switchi },
+    -- 4/6
+    ["sg_reload_start2_offset1__0"] = { Source = "sg_reload_start1_offset2__0", EventTable = sg_start0, IKTimeLine = rstartlhik }, -- good
+    ["sg_reload_start2_offset1__1"] = { Source = "sg_reload_start1_offset2__1", EventTable = sg_start1, IKTimeLine = rstartlhik },
+    ["sg_reload_start2_offset1__2"] = { Source = "sg_reload_start1_offset2__2", EventTable = sg_start2, IKTimeLine = rstartlhik },
+    ["sg_reload_start2_offset1__3"] = { Source = "sg_reload_start1_offset2__3", EventTable = sg_start3, IKTimeLine = rstartlhik },
+    ["sg_reload_start2_offset1__4"] = { Source = "sg_reload_start1_offset2__4", EventTable = sg_start4, IKTimeLine = rstartlhik },
+    ["sg_reload_start2_offset1__5"] = { Source = "sg_reload_start1_offset2__5", EventTable = sg_start5, IKTimeLine = rstartlhik },
+
+
+    ["sg_reload_insert0"] = { Source = "sg_reload_insert1", EventTable = sg_insert1, IKTimeLine = neverlhik },
+    ["sg_reload_insert1"] = { Source = "sg_reload_insert2", EventTable = sg_insert1, IKTimeLine = neverlhik },
+    ["sg_reload_insert2"] = { Source = "sg_reload_insert3", EventTable = sg_insert1, IKTimeLine = neverlhik },
+    ["sg_reload_insert3"] = { Source = "sg_reload_insert4", EventTable = sg_insert1, IKTimeLine = neverlhik },
+    ["sg_reload_insert4"] = { Source = "sg_reload_insert5", EventTable = sg_insert1, IKTimeLine = neverlhik },
+    ["sg_reload_insert5"] = { Source = "sg_reload_insert6", EventTable = sg_insert1, IKTimeLine = neverlhik },
+
+
+    ["sg_reload_end"] = { Source = "sg_reload_end", EventTable = sg_end, IKTimeLine = rendlhik },
+    ["sg_reload_end_last"] = { Source = "sg_reload_end_last", EventTable = sg_end, IKTimeLine = rendlhik },
+
+    ["sg_reload_start_empty6__0"] = { Source = "sg_reload_start_empty__0", EventTable = sg_estart0_6, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty6__1"] = { Source = "sg_reload_start_empty__1", EventTable = sg_estart1_6, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty6__2"] = { Source = "sg_reload_start_empty__2", EventTable = sg_estart2_6, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty6__3"] = { Source = "sg_reload_start_empty__3", EventTable = sg_estart3_6, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty6__4"] = { Source = "sg_reload_start_empty__4", EventTable = sg_estart4_6, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty6__5"] = { Source = "sg_reload_start_empty__5", EventTable = sg_estart5_6, NoMagSwap = true, IKTimeLine = rstartlhik},
+
+    ["sg_reload_start_empty5__0"] = { Source = "sg_reload_start_empty__0", EventTable = sg_estart0_5, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty5__1"] = { Source = "sg_reload_start_empty__1", EventTable = sg_estart1_5, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty5__2"] = { Source = "sg_reload_start_empty__2", EventTable = sg_estart2_5, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty5__3"] = { Source = "sg_reload_start_empty__3", EventTable = sg_estart3_5, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty5__4"] = { Source = "sg_reload_start_empty__4", EventTable = sg_estart4_5, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty5__5"] = { Source = "sg_reload_start_empty__5", EventTable = sg_estart5_5, NoMagSwap = true, IKTimeLine = rstartlhik},
+
+    ["sg_reload_start_empty4__0"] = { Source = "sg_reload_start_empty__0", EventTable = sg_estart0_4, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty4__1"] = { Source = "sg_reload_start_empty__1", EventTable = sg_estart1_4, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty4__2"] = { Source = "sg_reload_start_empty__2", EventTable = sg_estart2_4, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty4__3"] = { Source = "sg_reload_start_empty__3", EventTable = sg_estart3_4, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty4__4"] = { Source = "sg_reload_start_empty__4", EventTable = sg_estart4_4, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty4__5"] = { Source = "sg_reload_start_empty__5", EventTable = sg_estart5_4, NoMagSwap = true, IKTimeLine = rstartlhik},
+
+    ["sg_reload_start_empty3__0"] = { Source = "sg_reload_start_empty__0", EventTable = sg_estart0_3, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty3__1"] = { Source = "sg_reload_start_empty__1", EventTable = sg_estart1_3, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty3__2"] = { Source = "sg_reload_start_empty__2", EventTable = sg_estart2_3, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty3__3"] = { Source = "sg_reload_start_empty__3", EventTable = sg_estart3_3, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty3__4"] = { Source = "sg_reload_start_empty__4", EventTable = sg_estart4_3, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty3__5"] = { Source = "sg_reload_start_empty__5", EventTable = sg_estart5_3, NoMagSwap = true, IKTimeLine = rstartlhik},
+
+    ["sg_reload_start_empty2__0"] = { Source = "sg_reload_start_empty__0", EventTable = sg_estart0_2, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty2__1"] = { Source = "sg_reload_start_empty__1", EventTable = sg_estart1_2, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty2__2"] = { Source = "sg_reload_start_empty__2", EventTable = sg_estart2_2, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty2__3"] = { Source = "sg_reload_start_empty__3", EventTable = sg_estart3_2, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty2__4"] = { Source = "sg_reload_start_empty__4", EventTable = sg_estart4_2, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty2__5"] = { Source = "sg_reload_start_empty__5", EventTable = sg_estart5_2, NoMagSwap = true, IKTimeLine = rstartlhik},
+
+    ["sg_reload_start_empty1__0"] = { Source = "sg_reload_start_empty__0", EventTable = sg_estart0_1, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty1__1"] = { Source = "sg_reload_start_empty__1", EventTable = sg_estart1_1, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty1__2"] = { Source = "sg_reload_start_empty__2", EventTable = sg_estart2_1, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty1__3"] = { Source = "sg_reload_start_empty__3", EventTable = sg_estart3_1, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty1__4"] = { Source = "sg_reload_start_empty__4", EventTable = sg_estart4_1, NoMagSwap = true, IKTimeLine = rstartlhik},
+    ["sg_reload_start_empty1__5"] = { Source = "sg_reload_start_empty__5", EventTable = sg_estart5_1, NoMagSwap = true, IKTimeLine = rstartlhik},
+
+
+    ["look__0"] = { Source = "look__0", MinProgress = 0.95, FireASAP = true, EventTable = look, IKTimeLine = looklhik },
+    ["look__1"] = { Source = "look__1", MinProgress = 0.95, FireASAP = true, EventTable = look, IKTimeLine = looklhik },
+    ["look__2"] = { Source = "look__2", MinProgress = 0.95, FireASAP = true, EventTable = look, IKTimeLine = looklhik },
+    ["look__3"] = { Source = "look__3", MinProgress = 0.95, FireASAP = true, EventTable = look, IKTimeLine = looklhik },
+    ["look__4"] = { Source = "look__4", MinProgress = 0.95, FireASAP = true, EventTable = look, IKTimeLine = looklhik },
+    ["look__5"] = { Source = "look__5", MinProgress = 0.95, FireASAP = true, EventTable = look, IKTimeLine = looklhik },
+
+    ["mag_check__0"] = { Source = "mag_check__0", MinProgress = 0.95, FireASAP = true, EventTable = magcheck, IKTimeLine = checklhik },
+    ["mag_check__1"] = { Source = "mag_check__1", MinProgress = 0.95, FireASAP = true, EventTable = magcheck, IKTimeLine = checklhik },
+    ["mag_check__2"] = { Source = "mag_check__2", MinProgress = 0.95, FireASAP = true, EventTable = magcheck, IKTimeLine = checklhik },
+    ["mag_check__3"] = { Source = "mag_check__3", MinProgress = 0.95, FireASAP = true, EventTable = magcheck, IKTimeLine = checklhik },
+    ["mag_check__4"] = { Source = "mag_check__4", MinProgress = 0.95, FireASAP = true, EventTable = magcheck, IKTimeLine = checklhik },
+    ["mag_check__5"] = { Source = "mag_check__5", MinProgress = 0.95, FireASAP = true, EventTable = magcheck, IKTimeLine = checklhik },
+
+    ["toggle__0"] = {        Source = "mod_switch__0", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["switchsights__0"] = {  Source = "mod_switch__0", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["toggle__1"] = {        Source = "mod_switch__1", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["switchsights__1"] = {  Source = "mod_switch__1", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["toggle__2"] = {        Source = "mod_switch__2", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["switchsights__2"] = {  Source = "mod_switch__2", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["toggle__3"] = {        Source = "mod_switch__3", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["switchsights__3"] = {  Source = "mod_switch__3", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["toggle__4"] = {        Source = "mod_switch__4", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["switchsights__4"] = {  Source = "mod_switch__4", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["toggle__5"] = {        Source = "mod_switch__5", EventTable = switchi, IKTimeLine = alwayslhik },
+    ["switchsights__5"] = {  Source = "mod_switch__5", EventTable = switchi, IKTimeLine = alwayslhik },
 
 }
 
@@ -911,54 +1079,12 @@ SWEP.Hook_ModifyBodygroups = function(swep, data)
         if eles[k] then ammotype = v break end 
     end
 
-    -- if rc > 0 and hasmag then mdl:SetBodygroup(7, ammotype) else mdl:SetBodygroup(7, 0) end -- prob could be better but h
-    -- if rc > 5 and hasmag then mdl:SetBodygroup(6, ammotype) else mdl:SetBodygroup(6, 0) end
-    -- if rc > 4 and hasmag then mdl:SetBodygroup(5, ammotype) else mdl:SetBodygroup(5, 0) end
-    -- if rc > 3 and hasmag then mdl:SetBodygroup(4, ammotype) else mdl:SetBodygroup(4, 0) end
-    -- if rc > 2 and hasmag then mdl:SetBodygroup(3, ammotype) else mdl:SetBodygroup(3, 0) end
-    -- if rc > 1 and hasmag then mdl:SetBodygroup(2, ammotype) else mdl:SetBodygroup(2, 0) end
-
-    -- if rc > 5 and hasmag then mdl:SetBodygroup(7, ammotype) else mdl:SetBodygroup(7, 0) end -- prob could be better but h
-    -- if rc > 4 and hasmag then mdl:SetBodygroup(6, ammotype) else mdl:SetBodygroup(6, 0) end
-    -- if rc > 3 and hasmag then mdl:SetBodygroup(5, ammotype) else mdl:SetBodygroup(5, 0) end
-    -- if rc > 2 and hasmag then mdl:SetBodygroup(4, ammotype) else mdl:SetBodygroup(4, 0) end
-    -- if rc > 1 and hasmag then mdl:SetBodygroup(3, ammotype) else mdl:SetBodygroup(3, 0) end
-    -- if rc > 0 and hasmag then mdl:SetBodygroup(2, ammotype) else mdl:SetBodygroup(2, 0) end
-
     if rc > 0 and hasmag then mdl:SetBodygroup(2, ammotype) else mdl:SetBodygroup(2, 0) end -- prob could be better but h
     if rc > 1 and hasmag then mdl:SetBodygroup(3, ammotype) else mdl:SetBodygroup(3, 0) end
     if rc > 2 and hasmag then mdl:SetBodygroup(4, ammotype) else mdl:SetBodygroup(4, 0) end
     if rc > 3 and hasmag then mdl:SetBodygroup(5, ammotype) else mdl:SetBodygroup(5, 0) end
     if rc > 4 and hasmag then mdl:SetBodygroup(6, ammotype) else mdl:SetBodygroup(6, 0) end
     if rc > 5 and hasmag then mdl:SetBodygroup(7, ammotype) else mdl:SetBodygroup(7, 0) end
-
-    -- if rc > 0 and hasmag then mdl:SetBodygroup(2, ammotype) else mdl:SetBodygroup(2, 0) end -- prob could be better but h
-    -- if rc > 5 and hasmag then mdl:SetBodygroup(3, ammotype) else mdl:SetBodygroup(3, 0) end
-    -- if rc > 4 and hasmag then mdl:SetBodygroup(4, ammotype) else mdl:SetBodygroup(4, 0) end
-    -- if rc > 3 and hasmag then mdl:SetBodygroup(5, ammotype) else mdl:SetBodygroup(5, 0) end
-    -- if rc > 2 and hasmag then mdl:SetBodygroup(6, ammotype) else mdl:SetBodygroup(6, 0) end
-    -- if rc > 1 and hasmag then mdl:SetBodygroup(7, ammotype) else mdl:SetBodygroup(7, 0) end
-
-    -- if rc > 0 and hasmag then mdl:SetBodygroup(2, ammotype) else mdl:SetBodygroup(2, 0) end -- prob could be better but h
-    -- if rc > 3 and hasmag then mdl:SetBodygroup(3, ammotype) else mdl:SetBodygroup(3, 0) end
-    -- if rc > 4 and hasmag then mdl:SetBodygroup(4, ammotype) else mdl:SetBodygroup(4, 0) end
-    -- if rc > 5 and hasmag then mdl:SetBodygroup(5, ammotype) else mdl:SetBodygroup(5, 0) end
-    -- if rc > 4 and hasmag then mdl:SetBodygroup(6, ammotype) else mdl:SetBodygroup(6, 0) end
-    -- if rc > 1 and hasmag then mdl:SetBodygroup(7, ammotype) else mdl:SetBodygroup(7, 0) end
-
-    -- if swep:GetNWBool("EFTRevolverRound1Loaded", false) and hasmag then mdl:SetBodygroup(2, ammotype) else mdl:SetBodygroup(2, 0) end
-    -- if swep:GetNWBool("EFTRevolverRound2Loaded", false) and hasmag then mdl:SetBodygroup(3, ammotype) else mdl:SetBodygroup(3, 0) end
-    -- if swep:GetNWBool("EFTRevolverRound3Loaded", false) and hasmag then mdl:SetBodygroup(4, ammotype) else mdl:SetBodygroup(4, 0) end
-    -- if swep:GetNWBool("EFTRevolverRound4Loaded", false) and hasmag then mdl:SetBodygroup(5, ammotype) else mdl:SetBodygroup(5, 0) end
-    -- if swep:GetNWBool("EFTRevolverRound5Loaded", false) and hasmag then mdl:SetBodygroup(6, ammotype) else mdl:SetBodygroup(6, 0) end
-    -- if swep:GetNWBool("EFTRevolverRound6Loaded", false) and hasmag then mdl:SetBodygroup(7, ammotype) else mdl:SetBodygroup(7, 0) end
-    
-    -- mdl:SetBodygroup(2, 0)
-    -- mdl:SetBodygroup(3, 0)
-    -- mdl:SetBodygroup(4, 0)
-    -- mdl:SetBodygroup(5, 0)
-    -- mdl:SetBodygroup(6, 0)
-    -- mdl:SetBodygroup(7, 0)
 end
 
 
@@ -967,10 +1093,10 @@ SWEP.Attachments = {
         PrintName = "Grenade type",
         Category = {"eft_ammo_40x46", "eft_ammo_40x46_nonubgl"},
         RejectAttachments = { ["eft_ammo_40x46_m576"] = true },
-        Bone = "patron_in_weapon",
+        Bone = "patron_in_weapon_001",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Integral = "eft_ammo_40x46_m406",
+        Integral = "eft_ammo_40x46_m381",
     },
     {
         PrintName = "Optic",
@@ -980,12 +1106,13 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
+        Installed = "eft_optic_m2a1",
     },
     {
         PrintName = "Magazine",
         Category = "eft_m32a1_mag",
         Bone = "mod_magazine",
-        -- Installed = "eft_rsh12_mag_std",
+        Installed = "eft_m32a1_mag_std",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -996,11 +1123,11 @@ SWEP.Attachments = {
         Bone = "mod_foregrip",
         -- Installed = "eft_ash12_hg_std",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, -90, 0),
+        Ang = Angle(0, -90, 180),
         Icon_Offset = Vector(0, 0, 0),
     },   
     {
-        PrintName = "aR Tactical",
+        PrintName = "Top Tactical",
         Category = {"eft_tactical", "eft_tactical_top"},
         -- RejectAttachments = { ["eft_tactical_raptar"] = true },
         Bone = "mod_tactical_000",
@@ -1029,7 +1156,7 @@ SWEP.Attachments = {
     {
         PrintName = "Pistol grip",
         Category = {"eft_ar15_pgrip"},
-        -- Installed = "eft_ar_pgrip_diecsfde",
+        Installed = "eft_ar_pgrip_diecsfde",
         Bone = "mod_pistol_grip",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
@@ -1040,16 +1167,15 @@ SWEP.Attachments = {
         Bone = "mod_stock",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
-        -- Installed = "eft_ar_buffertube_a2",
+        Installed = "eft_ar_stock_m4ss",
     },
     
     {
         PrintName = "Custom slot",
         Category = {"eft_custom_slot", "eft_custom_slot_m32a1"},
-        Bone = "weapon",
-        Pos = Vector(0, 26.5, 0.2),
-        Ang = Angle(0, 90, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Bone = "mod_stock",
+        Pos = Vector(0, 0, -3),
+        Ang = Angle(0, -90, 0),
         -- CosmeticOnly = true,
     },
 }
