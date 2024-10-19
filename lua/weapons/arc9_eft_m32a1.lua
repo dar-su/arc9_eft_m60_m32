@@ -1098,7 +1098,7 @@ SWEP.Attachments = {
         PrintName = "Foregrip",
         Category = {"eft_foregrip_small", "eft_foregrip_medium"},
         Bone = "weapon_mag_axis",    
-        Pos = Vector(0, 11.3, -3.2),
+        Pos = Vector(0, 10.5, -3.2),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
     },   
