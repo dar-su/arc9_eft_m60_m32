@@ -24,7 +24,7 @@ ATT.Attachments = {
         PrintName = "Custom slot",
         Pos = Vector(0, 0, 1),
         Ang = Angle(0, 0, 0),
-        Category = {"eft_custom_slot"},
+        Category = {"eft_custom_slot","eft_custom_slot_m32a1"},
     },
 }
 
@@ -59,6 +59,37 @@ ATT.Category = {"eft_m32a1_mag"}
 
 ARC9.LoadAttachment(ATT, "eft_m32a1_mag_std")
 
+
+///////////////////////////////////////      eft_m32a1_black
+
+
+ATT = {}
+
+ATT.PrintName = "Black skin"
+ATT.CompactName = "Black"
+ATT.Icon = Material("entities/eft_m32_attachments/black.png", "mips smooth")
+ATT.Description = [[Black color instead of FDE M32 parts.
+
+Not presents in EFT, custom att.]]
+
+ATT.SubMaterial2 = "models/weapons/arc9/darsu_eft/m32/weapon_milkor_m32a1_msgl_40x46_back_BLK"
+ATT.SubMaterial0 = "models/weapons/arc9/darsu_eft/m32/weapon_milkor_m32a1_msgl_40x46_front_BLK"
+ATT.SubMaterial1 = "models/weapons/arc9/darsu_eft/m32/mag_msgl_milkor_cylinder_mag_std_40x46_6_front_BLK"
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_custom_slot_m32a1"}
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m32a1"},
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_m32a1_black")
 
 
 
