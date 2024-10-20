@@ -788,4 +788,13 @@ ATT.RequireElements = {"eft_e6"}
 ATT.SortOrder = -6
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot", "eft_custom_slot_m60"},
+    },
+}
+
 ARC9.LoadAttachment(ATT, "eft_m60_e6fde")
