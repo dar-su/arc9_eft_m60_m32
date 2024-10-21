@@ -19,7 +19,7 @@ SWEP.DefaultElements = {"eft_e6"} -- owo
 SWEP.Attachments = {
     {
         Installed = "eft_scope_elcan",
-        ExtraSightDistance = -3.5,
+        -- ExtraSightDistance = -3.5,
     },
     {
         Installed = "eft_m60_barrel_e4_475",
