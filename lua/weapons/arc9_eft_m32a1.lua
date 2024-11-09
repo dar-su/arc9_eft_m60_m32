@@ -259,6 +259,10 @@ SWEP.BulletBones = {
 
 local path = "weapons/darsu_eft/fn40/"
 
+SWEP.ShootPitchVariation = 0
+SWEP.DistantShootVolume = 0.05
+SWEP.DistantShootVolumeActual = 0.05
+
 SWEP.ShootSound = path .. "fn40gl_fire_close.ogg"
 SWEP.ShootSoundIndoor = path .. "fn40gl_fire_indoor_close.ogg"
 SWEP.DistantShootSound = path .. "fn40gl_fire_distant.ogg"
