@@ -555,6 +555,7 @@ ATT.CustomCons = { Ergonomics = "-2" }
 ATT.Bipod = true 
 ATT.RecoilMultBipod = 0.33
 ATT.VisualRecoilMultBipod = 0.33
+ATT.VisualRecoilSpringPunchDampingMultBipod = 3
 ATT.HoldBreathTimeMultBipod = 30
 ATT.SwayMultBipod = 0.1
 
