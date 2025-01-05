@@ -209,6 +209,9 @@ SWEP.DistantShootSoundSilenced = { path2 .. "m60_outdoor_silenced_distant_loop1.
 SWEP.DistantShootSoundIndoor = { path2 .. "m60_indoor_distant_loop1.ogg", path2 .. "m60_indoor_distant_loop2.ogg" }
 SWEP.DistantShootSoundSilencedIndoor = { path2 .. "m60_indoor_silenced_distant_loop1.ogg", path2 .. "m60_indoor_silenced_distant_loop2.ogg" }
 
+SWEP.EnterSightsSound = ARC9EFT.ADSMachineGun
+SWEP.ExitSightsSound = ARC9EFT.ADSMachineGun
+
 ------------------------- |||           Dropped magazines            ||| -------------------------
 
 SWEP.DropMagazineTime = 0.65
@@ -407,7 +410,7 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
         IKTimeLine = alwayslhik,
-        Time = 1000, -- REMOVEEEEEEEEEEEEEEE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!
+        -- Time = 1000, -- REMOVEEEEEEEEEEEEEEE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!
     },
 
     ["ready"] = {
