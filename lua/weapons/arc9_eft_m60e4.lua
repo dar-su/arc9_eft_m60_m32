@@ -67,6 +67,7 @@ SWEP.Ammo = "ar2"
 SWEP.Firemodes = { { Mode = -1} }
 
 SWEP.Slot = 3
+SWEP.ReloadInSights = false 
 
 ------------------------- |||           Recoil            ||| -------------------------
 
