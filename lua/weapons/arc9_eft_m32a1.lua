@@ -64,7 +64,7 @@ SWEP.Firemodes = { { Mode = 1 } }
 SWEP.Slot = 4
 
 SWEP.ShootEnt = "arc9_eft_40mm_m433_bang"
-SWEP.ShootEntForce = 20000
+SWEP.ShootEntForce = 4000
 SWEP.ShootEntHook = function(swep, old) return swep:GetValue("ShootEntUBGL") end -- bleh bleh those rounds for ubgl only
 
 ------------------------- |||           Recoil            ||| -------------------------
