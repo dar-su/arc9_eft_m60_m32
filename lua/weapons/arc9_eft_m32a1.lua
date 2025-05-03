@@ -5,18 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-SWEP.PrintName = "Milkor M32A1 MSGL"
-SWEP.Description = [[M32A1 MSGL 40mm six-shot grenade launcher manufactured by Milkor USA. This grenade launcher uses the well-established principle of a revolver to achieve a high rate of accurate fire that can be quickly aimed at a target.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_m32a1_alt")
+SWEP.Description = "eft_weapon_m32a1_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_grenadelauncher") or "Grenade launcher"
+SWEP.Class = "eft_class_weapon_grenadelauncher" or "Grenade launcher"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_grenades")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Milkor (Pty) Ltd",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "40x46mm",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= "Revolver",
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = "South Africa",
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1983"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_milkor",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_40x46",
+    ["eft_trivia_act3"]= "eft_trivia_act_revolver",
+    ["eft_trivia_country4"] = "South Africa",
+    ["eft_trivia_year5"] = "1983"
 }
 
 SWEP.StandardPresets = false 

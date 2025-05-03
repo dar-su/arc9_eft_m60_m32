@@ -5,18 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-SWEP.PrintName = "M60E4"
-SWEP.Description = [[The M60E4 (Mk 43 Mod 1) is a 7.62x51 caliber light machine gun, a modification of the M60E3 with a more reliable trigger mechanism, ability to attach optics, and a number of other improvements. The M60 was nicknamed "The Pig" due to its bulky size and design flaws. Despite its disadvantages, variants of the M60 are still used in some military units. Manufactured by U.S. Ordnance.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_m60e4_alt")
+SWEP.Description = "eft_weapon_m60e4_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_lmg")
+SWEP.Class = "eft_class_weapon_lmg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_lmg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "U.S. Ordnance",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "7.62x51mm NATO",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"] = ARC9:GetPhrase("eft_trivia_act_gas"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_usa"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1957"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_usordnance",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_762x51",
+    ["eft_trivia_act3"] = "eft_trivia_act_gas",
+    ["eft_trivia_country4"] = "eft_trivia_country_usa",
+    ["eft_trivia_year5"] = "1957"
 }
 
 

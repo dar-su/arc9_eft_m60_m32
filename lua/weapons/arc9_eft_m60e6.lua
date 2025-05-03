@@ -6,8 +6,8 @@ SWEP.Base = "arc9_eft_m60e4"
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - Escape From Tarkov"
 
-SWEP.PrintName = "M60E6"
-SWEP.Description = [[The M60E6 is a 7.62x51 caliber light machine gun, a lightweight modification of the M60E4. The M60 was nicknamed "The Pig" due to its bulky size and design flaws. Despite its disadvantages, variants of the M60 are still used in some military units. Manufactured by U.S. Ordnance.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_m60e6")
+SWEP.Description = "eft_weapon_m60e6_desc"
 
 -- SWEP.DefaultBodygroups = "10000000000000"
 
