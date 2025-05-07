@@ -223,6 +223,8 @@ SWEP.ExitSightsSound = ARC9EFT.ADSMachineGun
 
 ------------------------- |||           Dropped magazines            ||| -------------------------
 
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineTime = 0.65
 SWEP.DropMagazineQCA = 4
 SWEP.DropMagazinePos = Vector(0, 0, 0)
